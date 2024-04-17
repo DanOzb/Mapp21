@@ -15,13 +15,7 @@ public class VideoScenesScript : MonoBehaviour
         rooms = new GameObject[][] { roomOne, roomTwo, RoomThree, RoomFour };
         roomNumber = RoomController.roomNumber - 1;
         rooms[roomNumber][counter].SetActive(true);
-        if(roomNumber == 0)
-        {
-            Invoke("LoopMethod", 9);
-        } else
-        {
-            Invoke("LoopMethod", 4);
-        }
+        Invoke("LoopMethod", 9);
         
     }
 
@@ -29,7 +23,7 @@ public class VideoScenesScript : MonoBehaviour
     {
         if(counter == rooms[roomNumber].Length - 1) 
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(3);
 
         }
         else
