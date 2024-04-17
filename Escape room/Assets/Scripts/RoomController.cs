@@ -5,19 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class RoomController : MonoBehaviour
 {
-    private int scene; 
+    public static int roomNumber;
     public void EnterRoom()
     {
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(2);
     }
 
     public void GoBackToMenu()
     {
+        print("back to menu");
         SceneManager.LoadScene(0);
     }
 
-    public void PickRoom(int i)
+    public void PickRoom(int number)
     {
-        scene = i;
+        roomNumber = number;
     }
+
 }

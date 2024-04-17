@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/ChooseRoom.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Room1.unity
+    path: Assets/Scenes/Quests.unity
     guid: 03d734d11aa07164abee2136804984eb
   m_configObjects: {}

@@ -1,18 +1,22 @@
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Video;
+using UnityEngine.SceneManagement;
+
+
 
 public class VideoPlayer : MonoBehaviour
 {
     [SerializeField] VideoPlayer myVideoPlayer;
+
     void Start()
     {
-        
+        Invoke("NextScene", 9);
+
     }
 
-    void ChangeScene(VideoPlayer vp)
+    void NextScene()
     {
-
+        SceneManager.LoadScene(3);
     }
 }
