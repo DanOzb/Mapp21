@@ -9,12 +9,36 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: a338803f77f97ed4cad8db9f79a08592
   - enabled: 1
+    path: Assets/Scenes/FirstQuest.unity
+    guid: 206dd835c06140d4aab7eb1cec8bb897
+  - enabled: 1
     path: Assets/Scenes/ChooseRoom.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: cdbbe6839a658ec4d81cd18314f1d4f1
   - enabled: 1
     path: Assets/Scenes/FirstRooms.unity
     guid: 03d734d11aa07164abee2136804984eb
   - enabled: 1
-    path: Assets/Scenes/FirstQuests.unity
-    guid: 206dd835c06140d4aab7eb1cec8bb897
+    path: Assets/Scenes/SecondQuest.unity
+    guid: 6455fb99a8fa1e04aa017fd43409ead4
+  - enabled: 1
+    path: Assets/Scenes/ChooseRoom 1.unity
+    guid: 85c1bb198a2e07348a17b13fa41c7655
+  - enabled: 1
+    path: Assets/Scenes/SecondRooms.unity
+    guid: edbd513227dae8345a4bae7c7f426548
+  - enabled: 1
+    path: Assets/Scenes/ThirdQuest.unity
+    guid: a6fc57fd7f7503d4ebcb6619a551e9ca
+  - enabled: 1
+    path: Assets/Scenes/ChooseRoom 2.unity
+    guid: 52aa8899baae6b646a87ce2145ce49a4
+  - enabled: 1
+    path: Assets/Scenes/ThirdRooms.unity
+    guid: ab11add4f258fce4f9bedc714372b01a
+  - enabled: 1
+    path: Assets/Scenes/FourthQuest.unity
+    guid: f6478504b4f9f0d4da866662aa57af1f
+  - enabled: 1
+    path: Assets/Scenes/FifthQuest.unity
+    guid: afb8a99ad3c329241aa6e0af49ac8d33
   m_configObjects: {}

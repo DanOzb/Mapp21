@@ -32,7 +32,7 @@ public class VideoPlayerScript : MonoBehaviour
     {
         videoPlayer = room.GetComponentInChildren<VideoPlayer>();
         if (videoPlayer == null)
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         else
         {
             videoPlayer.targetCamera = camera.GetComponent<Camera>();
