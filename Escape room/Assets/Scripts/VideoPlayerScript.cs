@@ -24,7 +24,6 @@ public class VideoPlayerScript : MonoBehaviour
             if (rm.name.Contains((roomNumber + 1).ToString()))
                 room = rm;
         }
-        print(room.name);
         playVideo();
     }
 
@@ -32,7 +31,7 @@ public class VideoPlayerScript : MonoBehaviour
     {
         videoPlayer = room.GetComponentInChildren<VideoPlayer>();
         if (videoPlayer == null)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(2);
         else
         {
             videoPlayer.targetCamera = camera.GetComponent<Camera>();
