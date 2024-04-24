@@ -31,7 +31,8 @@ public class VideoPlayerScript : MonoBehaviour
     {
         videoPlayer = room.GetComponentInChildren<VideoPlayer>();
         if (videoPlayer == null)
-            SceneManager.LoadScene(2);
+            //hittar QuestController som ska finnas i barnobjektet
+            this.gameObject.transform.GetChild(0).GetComponent<QuestController>().Play();
         else
         {
             videoPlayer.targetCamera = camera.GetComponent<Camera>();

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class QuestOne : MonoBehaviour
 {
     [SerializeField] private Transform gameTransform;
     [SerializeField] private Transform piecePrefab;
@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
         // Check for completion.
         if (!shuffling && CheckCompletion())
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(2);
         }
 
         // On click send out ray to see if we click a piece.
