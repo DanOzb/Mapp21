@@ -8,6 +8,7 @@ TagManager:
   - Quest
   - Button
   - Container
+  - Killzone
   layers:
   - Default
   - TransparentFX
