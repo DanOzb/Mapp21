@@ -792,12 +792,12 @@ GameObject:
   m_Component:
   - component: {fileID: 475527640}
   m_Layer: 0
-  m_Name: Canvas- Potions
+  m_Name: Canvas- A, B, C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &475527640
 Transform:
   m_ObjectHideFlags: 0
@@ -1174,6 +1174,50 @@ Transform:
   - {fileID: 1693726106}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &844441522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 844441524}
+  - component: {fileID: 844441523}
+  m_Layer: 0
+  m_Name: Options - A B C
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &844441523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844441522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a1a084f396cd5849a2a1756a63fd7bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &844441524
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844441522}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 402.50134, y: 188.35059, z: -3.382536}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &864399557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,7 +1300,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 864399560}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 844441523}
+        m_TargetAssemblyTypeName: Room4, Assembly-CSharp
+        m_MethodName: OptionB
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &864399560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1581,7 +1637,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1071566029}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 844441523}
+        m_TargetAssemblyTypeName: Room4, Assembly-CSharp
+        m_MethodName: OptionC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1071566029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2250,7 +2318,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1693709254}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 844441523}
+        m_TargetAssemblyTypeName: Room4, Assembly-CSharp
+        m_MethodName: OptionA
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1693709254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2459,3 +2539,4 @@ SceneRoots:
   - {fileID: 154720930}
   - {fileID: 1051355226}
   - {fileID: 1793745329}
+  - {fileID: 844441524}
