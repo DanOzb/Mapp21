@@ -39,8 +39,7 @@ public class QuestThree : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        //ändra till gameOver scene senare
         if (collision.gameObject.tag == "Killzone")
-            SceneManager.LoadScene(0);
+            GameObject.FindGameObjectWithTag("GameOver").SetActive(true);
     }
 }

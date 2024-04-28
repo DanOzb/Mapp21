@@ -9,15 +9,9 @@ public class MenuController : MonoBehaviour
     public void StartGame()
     {
         RoomController.roomNumber = 1;
+        RoomController.roomNumbers = 0;
         SceneManager.LoadScene(1);
     }
-
-    
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-
 
     public void ShowSettings()
     {

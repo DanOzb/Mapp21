@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Room3Buttons : MonoBehaviour
+public class GameOverScript : MonoBehaviour
 {
-    public void BluePill()
-        //Börja om från början
+    public void RestartGame()
     {
         RoomController.roomNumber = 1;
         RoomController.roomNumbers = 0;
         SceneManager.LoadScene(1);
     }
 
-    public void RedPill()
-        //Gå vidare till ChooseRoom 4
+    public void GoToHomeScreen()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(0);
     }
+
 }

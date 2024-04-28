@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SecondQuest : MonoBehaviour
@@ -37,7 +38,7 @@ public class SecondQuest : MonoBehaviour
         if (answerIndex == correctAnswers[currentQuestionIndex])
         {
             Debug.Log("Rätt Svar, du överlever!");
-            gameOverPanel.SetActive(true);
+            SceneManager.LoadScene(2);
         }
         else
         {

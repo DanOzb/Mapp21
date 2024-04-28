@@ -7,21 +7,27 @@ using UnityEngine.SceneManagement;
 public class RoomController : MonoBehaviour
 {
     public static int roomNumber;
-    private static int roomNumbers;
+    public static int roomNumbers;
     private GameObject[] buttons;
 
     private void Start()
     {
         buttons = GameObject.FindGameObjectsWithTag("Button");
         Char[] arr = roomNumbers.ToString().ToCharArray();
+        int temp = 0;
         foreach (GameObject button in buttons)
         {
             foreach (char c in arr)
             {
-                if(button.name.Contains(c))
+                if (button.name.Contains(c))
+                {
                     button.SetActive(false);
+                    temp++;
+                }
             }
         }
+        if (temp == 4)
+            SceneManager.LoadScene(0);
     }
 
     public void EnterRoom()
