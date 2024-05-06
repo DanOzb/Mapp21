@@ -57,6 +57,7 @@ public class QuestOne : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Quest 1 started");
         pieces = new List<Transform>();
         size = 3;
         CreateGamePieces(0.01f);

@@ -32,7 +32,7 @@ public class VideoPlayerScript : MonoBehaviour
         videoPlayer = room.GetComponentInChildren<VideoPlayer>();
         if (videoPlayer == null)
             //hittar QuestController som ska finnas i barnobjektet
-            this.gameObject.transform.GetChild(0).GetComponent<QuestController>().Play();
+            this.gameObject.transform.GetChild(0).GetComponent<QuestController>().Play(0);
         else
         {
             videoPlayer.targetCamera = camera.GetComponent<Camera>();
