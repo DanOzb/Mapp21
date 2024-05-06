@@ -9,6 +9,7 @@ public class QuestThree : MonoBehaviour
     private float tilt;
     private float moveSpeed = 40f; 
     private Rigidbody2D rigid;
+    [SerializeField] GameObject gameOverScreen;
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>(); 
@@ -40,6 +41,6 @@ public class QuestThree : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Killzone")
-            GameObject.FindGameObjectWithTag("GameOver").SetActive(true);
+            gameOverScreen.SetActive(true);
     }
 }

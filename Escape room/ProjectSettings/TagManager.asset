@@ -9,6 +9,7 @@ TagManager:
   - Button
   - Container
   - Killzone
+  - GameOver
   layers:
   - Default
   - TransparentFX
