@@ -6,13 +6,16 @@ using UnityEngine.SceneManagement;
 public class QuestThree : MonoBehaviour
 {
     public bool isFlat = true;
+    public bool lost = false;
+    public bool won = false;
     private float tilt;
     private float moveSpeed = 40f; 
     private Rigidbody2D rigid;
     [SerializeField] GameObject gameOverScreen;
     void Start()
     {
-        rigid = GetComponent<Rigidbody2D>(); 
+        rigid = GetComponent<Rigidbody2D>();
+        Invoke("GameWon", 10);
     }
 
     //ta bort innan muntan
@@ -25,6 +28,17 @@ public class QuestThree : MonoBehaviour
     public void Exit()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void GameWon()
+    {
+        if (!lost)
+        {
+            won = true;
+            //gör något
+            SceneManager.LoadScene(2);
+        }
+
     }
 
     void Update()
@@ -41,6 +55,12 @@ public class QuestThree : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Killzone")
-            gameOverScreen.SetActive(true);
+        {
+            if (!won)
+            {
+                gameOverScreen.SetActive(true);
+                lost = true;
+            }
+        }
     }
 }
