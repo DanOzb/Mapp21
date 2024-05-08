@@ -5,9 +5,8 @@ using UnityEngine.Video;
 public class SkipVideoButton : MonoBehaviour
 {
     public VideoPlayer[] videoPlayers; // Array of VideoPlayers
-    public OpenQuestContainer questContainerOpener;// Reference to the script that opens the QuestContainer
+    public GameObject questContainerOpener;// Reference to the script that opens the QuestContainer
     private int currentVideoIndex = 0; // Index of the currently playing video
-    
 
     public void SkipVideo()
     {
@@ -26,7 +25,7 @@ public class SkipVideoButton : MonoBehaviour
             else
             {
                 // If this is the last video, open the QuestContainer
-                questContainerOpener.OpenContainer();
+                questContainerOpener.GetComponent<QuestController>().Play(0);
             }
         }
     }

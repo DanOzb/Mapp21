@@ -14,11 +14,13 @@ public class VideoPlayerScript : MonoBehaviour
     private GameObject room;
     private new GameObject camera;
     private VideoPlayer videoPlayer;
+    [SerializeField] GameObject[] extraVideos; 
 
     private void Start()
     {
         rooms = GameObject.FindGameObjectsWithTag("Room");
         camera = GameObject.Find("Main Camera");
+        //sätter rätt rum till room
         foreach (GameObject rm in rooms)
         {
             if (rm.name.Contains((roomNumber + 1).ToString()))
@@ -27,12 +29,16 @@ public class VideoPlayerScript : MonoBehaviour
         playVideo();
     }
 
+    //spelar videos
     void playVideo()
     {
+        //spelar den första videon från room
         videoPlayer = room.GetComponentInChildren<VideoPlayer>();
         if (videoPlayer == null)
+        {
             //hittar QuestController som ska finnas i barnobjektet
             this.gameObject.transform.GetChild(0).GetComponent<QuestController>().Play(0);
+        }
         else
         {
             videoPlayer.targetCamera = camera.GetComponent<Camera>();
@@ -41,10 +47,36 @@ public class VideoPlayerScript : MonoBehaviour
         }
     }
 
+    //påkallas av playvideo när videon har nått slutet
     void EndReached( VideoPlayer vp)
     {
         videoPlayer.gameObject.SetActive(false);
         playVideo();
     }
 
+    //tar emot en videoplayer, spelar den och kallar nästa object från QuestController
+    public void PlayExtraVideos(VideoPlayer vp)
+    {
+        videoPlayer = vp;
+        videoPlayer.targetCamera = camera.GetComponent<Camera>();
+        videoPlayer.Play();
+        videoPlayer.loopPointReached += SetActiveFalse;
+        this.gameObject.transform.GetChild(0).GetComponent<QuestController>().Play(1);
+    }
+    //sätter objektet till false
+    public void SetActiveFalse(GameObject obj)
+    {
+        obj.SetActive(false);
+    }
+    //sätter videoplayer objektet till false
+    public void SetActiveFalse(VideoPlayer vp)
+    {
+        SetActiveFalse(vp.gameObject);
+    }
+    //spolar fram framecount så att EndReached påkallas av playVideo()
+    public void SkipVideo()
+    {
+        ulong frameCount = videoPlayer.clip.frameCount - 1;
+        videoPlayer.frame = (long) frameCount;
+    }
 }

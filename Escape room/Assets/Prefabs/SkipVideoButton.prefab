@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 6677064762418031245}
   m_Layer: 0
   m_Name: SkipVideoButton
-  m_TagString: Untagged
+  m_TagString: Skip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -280,7 +280,6 @@ GameObject:
   - component: {fileID: 1996417776979376694}
   - component: {fileID: 1099098873740855642}
   - component: {fileID: 633515950535448707}
-  - component: {fileID: 1060761435866881459}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -402,16 +401,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1060761435866881459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6471634857352585316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64f576a40e8e964468bc0611c88ddb32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  videoPlayers: []
