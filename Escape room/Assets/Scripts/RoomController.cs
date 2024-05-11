@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class RoomController : MonoBehaviour
 {
-    public static int roomNumber;
+    public int roomNumber;
     public static int roomNumbers;
     private GameObject[] buttons;
 

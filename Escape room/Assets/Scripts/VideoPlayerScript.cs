@@ -9,23 +9,17 @@ using UnityEngine.Video;
 //som håller videoplayers och video klipp.
 public class VideoPlayerScript : MonoBehaviour
 {
-    private int roomNumber = RoomController.roomNumber - 1;
-    private GameObject[] rooms;
     private GameObject room;
+    private GameObject skipButton;
     private new GameObject camera;
     private VideoPlayer videoPlayer;
     [SerializeField] GameObject[] extraVideos; 
 
     private void Start()
     {
-        rooms = GameObject.FindGameObjectsWithTag("Room");
-        camera = GameObject.Find("Main Camera");
-        //sätter rätt rum till room
-        foreach (GameObject rm in rooms)
-        {
-            if (rm.name.Contains((roomNumber + 1).ToString()))
-                room = rm;
-        }
+        room = GameObject.FindGameObjectWithTag("Room");
+        camera = GameObject.FindGameObjectWithTag("MainCamera");
+        skipButton = GameObject.FindGameObjectWithTag("Skip");
         playVideo();
     }
 
@@ -34,9 +28,11 @@ public class VideoPlayerScript : MonoBehaviour
     {
         //spelar den första videon från room
         videoPlayer = room.GetComponentInChildren<VideoPlayer>();
+        
         if (videoPlayer == null)
         {
             //hittar QuestController som ska finnas i barnobjektet
+            skipButton.SetActive(false);
             this.gameObject.transform.GetChild(0).GetComponent<QuestController>().Play(0);
         }
         else
@@ -57,16 +53,18 @@ public class VideoPlayerScript : MonoBehaviour
     //tar emot en videoplayer, spelar den och kallar nästa object från QuestController
     public void PlayExtraVideos(VideoPlayer vp)
     {
+        skipButton.SetActive(true);
         videoPlayer = vp;
         videoPlayer.targetCamera = camera.GetComponent<Camera>();
         videoPlayer.Play();
         videoPlayer.loopPointReached += SetActiveFalse;
-        this.gameObject.transform.GetChild(0).GetComponent<QuestController>().Play(1);
     }
     //sätter objektet till false
     public void SetActiveFalse(GameObject obj)
     {
         obj.SetActive(false);
+        skipButton.SetActive(false);
+        this.gameObject.transform.GetChild(0).GetComponent<QuestController>().Play(1);
     }
     //sätter videoplayer objektet till false
     public void SetActiveFalse(VideoPlayer vp)

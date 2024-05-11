@@ -8,7 +8,6 @@ public class Room3Buttons : MonoBehaviour
     public void BluePill()
         //Börja om från början
     {
-        RoomController.roomNumber = 1;
         RoomController.roomNumbers = 0;
         SceneManager.LoadScene(1);
     }

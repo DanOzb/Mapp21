@@ -8,7 +8,6 @@ public class MenuController : MonoBehaviour
     [SerializeField] GameObject settingsPanel;
     public void StartGame()
     {
-        RoomController.roomNumber = 1;
         RoomController.roomNumbers = 0;
         SceneManager.LoadScene(1);
     }
