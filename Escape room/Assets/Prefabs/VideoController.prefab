@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2903518326343697945}
+  - {fileID: 5766713914798260133}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1365096855582798668
@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3d1ae38e29865e42871ed1b5fb2bfbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  exitVideo: {fileID: 32900000, guid: edb48c7ff60f83c4a84453410110c81d, type: 3}
 --- !u!1001 &7040408806908154513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -102,8 +103,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20cdd734190543f4693b76b62ef90784, type: 3}
---- !u!4 &2903518326343697945 stripped
+--- !u!4 &5766713914798260133 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 5332209228717708424, guid: 20cdd734190543f4693b76b62ef90784, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3581475795015626036, guid: 20cdd734190543f4693b76b62ef90784, type: 3}
   m_PrefabInstance: {fileID: 7040408806908154513}
   m_PrefabAsset: {fileID: 0}

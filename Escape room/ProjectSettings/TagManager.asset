@@ -11,6 +11,7 @@ TagManager:
   - Killzone
   - GameOver
   - Skip
+  - ExitVideo
   layers:
   - Default
   - TransparentFX

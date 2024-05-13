@@ -13,7 +13,6 @@ public class QuestController : MonoBehaviour
             SceneManager.LoadScene(2);
         else
         {
-            Debug.Log("child object with index " + index + " is getting called");
             questObject.transform.GetChild(index).gameObject.SetActive(true);
         }
     }

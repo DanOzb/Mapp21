@@ -7,6 +7,7 @@ public class QuestOne : MonoBehaviour
 {
     [SerializeField] private Transform gameTransform;
     [SerializeField] private Transform piecePrefab;
+    [SerializeField] private GameObject videoController;
 
     private List<Transform> pieces;
     private int emptyLocation;
@@ -57,7 +58,6 @@ public class QuestOne : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Quest 1 started");
         pieces = new List<Transform>();
         size = 3;
         CreateGamePieces(0.01f);
@@ -71,7 +71,7 @@ public class QuestOne : MonoBehaviour
         // Check for completion.
         if (!shuffling && CheckCompletion())
         {
-            SceneManager.LoadScene(2);
+            videoController.GetComponent<VideoPlayerScript>().ExitVideo();
         }
 
         // On click send out ray to see if we click a piece.

@@ -5,15 +5,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
-//För att få scriptet att fungera, byt inte namn på spel objekten
-//som håller videoplayers och video klipp.
 public class VideoPlayerScript : MonoBehaviour
 {
     private GameObject room;
     private GameObject skipButton;
     private new GameObject camera;
     private VideoPlayer videoPlayer;
-    [SerializeField] GameObject[] extraVideos; 
+    [SerializeField] VideoPlayer exitVideo; 
 
     private void Start()
     {
@@ -26,6 +24,7 @@ public class VideoPlayerScript : MonoBehaviour
     //spelar videos
     void playVideo()
     {
+
         //spelar den första videon från room
         videoPlayer = room.GetComponentInChildren<VideoPlayer>();
         
@@ -71,10 +70,25 @@ public class VideoPlayerScript : MonoBehaviour
     {
         SetActiveFalse(vp.gameObject);
     }
-    //spolar fram framecount så att EndReached påkallas av playVideo()
+    //spolar fram framecount så att EndReached påkallas av playVideo
     public void SkipVideo()
     {
         ulong frameCount = videoPlayer.clip.frameCount - 1;
         videoPlayer.frame = (long) frameCount;
+    }
+
+    public void ExitVideo()
+    {
+        GameObject.FindGameObjectWithTag("Container").SetActive(false);
+        skipButton.SetActive(true);
+        videoPlayer = exitVideo;
+        videoPlayer.targetCamera = camera.GetComponent<Camera>();
+        videoPlayer.Play();
+        videoPlayer.loopPointReached += ExitReached;
+    }
+
+    void ExitReached(VideoPlayer vp)
+    {
+        SceneManager.LoadScene(2);
     }
 }
