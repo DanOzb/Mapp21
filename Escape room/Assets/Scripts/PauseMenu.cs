@@ -6,10 +6,12 @@ using UnityEngine.Video;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] GameObject pauseMenu;
+    private GameObject skipButton;
+    [SerializeField] GameObject pauseMenu, pauseButton;
 
     public void Start()
     {
+        skipButton = GameObject.FindGameObjectWithTag("Skip");
         VideoPlayer[] videoPlayers = FindObjectsOfType<VideoPlayer>();
 
         // Pause each VideoPlayer found
@@ -30,6 +32,9 @@ public class PauseMenu : MonoBehaviour
         {
             player.Pause();
         }
+        if(skipButton != null)
+            skipButton.SetActive(false);
+        pauseButton.SetActive(false);
     }
 
     
@@ -42,6 +47,9 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenu.SetActive(false);
+        if (skipButton != null)
+            skipButton.SetActive(true);
+        pauseButton.SetActive(true);
         Time.timeScale = 1;
 
         // Find all VideoPlayer components in the scene
