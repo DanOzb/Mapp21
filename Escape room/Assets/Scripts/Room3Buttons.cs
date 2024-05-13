@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class Room3Buttons : MonoBehaviour
 {
+    [SerializeField] GameObject videoController;
     public void BluePill()
         //Börja om från början
     {
@@ -15,6 +18,8 @@ public class Room3Buttons : MonoBehaviour
     public void RedPill()
         //Gå vidare till ChooseRoom 4
     {
-        SceneManager.LoadScene(2);
+        videoController.GetComponent<VideoPlayerScript>().ExitVideo();
     }
+
+
 }
