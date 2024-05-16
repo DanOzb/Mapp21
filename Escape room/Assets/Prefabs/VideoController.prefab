@@ -31,6 +31,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5766713914798260133}
+  - {fileID: 562595380779975726}
+  - {fileID: 2656896511431448154}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1365096855582798668
@@ -46,6 +48,156 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exitVideo: {fileID: 32900000, guid: edb48c7ff60f83c4a84453410110c81d, type: 3}
+--- !u!1 &6699483862556977225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2656896511431448154}
+  - component: {fileID: 8538678194416778741}
+  m_Layer: 0
+  m_Name: ExitVideo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2656896511431448154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6699483862556977225}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 823.8918, y: 234.31613, z: 0.06864843}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6073980759906221259}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!328 &8538678194416778741
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6699483862556977225}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: edb48c7ff60f83c4a84453410110c81d, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 1
+  m_AspectRatio: 3
+  m_DataSource: 0
+  m_TimeUpdateMode: 2
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
+--- !u!1001 &6586248934876704419
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6073980759906221259}
+    m_Modifications:
+    - target: {fileID: 633515950535448707, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1365096855582798668}
+    - target: {fileID: 633515950535448707, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SkipVideo
+      objectReference: {fileID: 0}
+    - target: {fileID: 633515950535448707, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: VideoPlayerScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4983752439228310106, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4983752439228310106, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4996976960843420989, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
+      propertyPath: m_Name
+      value: SkipVideoButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
+--- !u!4 &562595380779975726 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
+  m_PrefabInstance: {fileID: 6586248934876704419}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7040408806908154513
 PrefabInstance:
   m_ObjectHideFlags: 0
