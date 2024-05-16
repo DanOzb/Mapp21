@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 34969337}
   - component: {fileID: 34969336}
   - component: {fileID: 34969335}
+  - component: {fileID: 34969338}
   m_Layer: 0
   m_Name: 'Button - Room 1 '
   m_TagString: Button
@@ -402,6 +403,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 34969333}
   m_CullTransparentMesh: 1
+--- !u!114 &34969338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34969333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caaf4d77eda2efb4581810d6517c92b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Room1
 --- !u!1 &442341965
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +821,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859139238}
   m_CullTransparentMesh: 1
+--- !u!1 &878790411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 878790413}
+  - component: {fileID: 878790412}
+  m_Layer: 0
+  m_Name: RoomButtonScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &878790412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878790411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caaf4d77eda2efb4581810d6517c92b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: 
+--- !u!4 &878790413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878790411}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 508.6384, y: 211.06734, z: -6.0694027}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1027871454 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7409848702791157985, guid: 53dff0bfa36b7094c88cb1079c8eaccf, type: 3}
@@ -1261,6 +1320,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1456290001}
   m_CullTransparentMesh: 1
+--- !u!1 &1554530411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1554530413}
+  - component: {fileID: 1554530412}
+  m_Layer: 0
+  m_Name: RandomizeRoomScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1554530412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554530411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0247adafe39e54dbd4da880a2a95f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomScenes:
+  - Room1
+  - Room2
+  - Room3
+  - Room4
+--- !u!4 &1554530413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554530411}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 508.6384, y: 211.06734, z: -6.0694027}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1611288867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1273,6 +1381,7 @@ GameObject:
   - component: {fileID: 1611288871}
   - component: {fileID: 1611288870}
   - component: {fileID: 1611288869}
+  - component: {fileID: 1611288872}
   m_Layer: 0
   m_Name: Button - Room 3
   m_TagString: Button
@@ -1406,6 +1515,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611288867}
   m_CullTransparentMesh: 1
+--- !u!114 &1611288872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611288867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caaf4d77eda2efb4581810d6517c92b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Room3
 --- !u!1 &1694754240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,6 +1540,7 @@ GameObject:
   - component: {fileID: 1694754244}
   - component: {fileID: 1694754243}
   - component: {fileID: 1694754242}
+  - component: {fileID: 1694754245}
   m_Layer: 0
   m_Name: Button - Room 2
   m_TagString: Button
@@ -1551,6 +1674,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694754240}
   m_CullTransparentMesh: 1
+--- !u!114 &1694754245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694754240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caaf4d77eda2efb4581810d6517c92b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Room2
 --- !u!1001 &2047574228
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1765,8 +1901,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4437382658213179596, guid: 53dff0bfa36b7094c88cb1079c8eaccf, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2112481709676203318}
   m_SourcePrefab: {fileID: 100100000, guid: 53dff0bfa36b7094c88cb1079c8eaccf, type: 3}
+--- !u!1 &2112481709676203317 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4437382658213179596, guid: 53dff0bfa36b7094c88cb1079c8eaccf, type: 3}
+  m_PrefabInstance: {fileID: 2112481709676203316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2112481709676203318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112481709676203317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caaf4d77eda2efb4581810d6517c92b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Room4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1775,3 +1932,5 @@ SceneRoots:
   - {fileID: 2047574228}
   - {fileID: 1418765334}
   - {fileID: 503101253}
+  - {fileID: 1554530413}
+  - {fileID: 878790413}

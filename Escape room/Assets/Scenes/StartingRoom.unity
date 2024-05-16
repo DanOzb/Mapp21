@@ -215,7 +215,7 @@ PrefabInstance:
     - target: {fileID: 8010199463447016914, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_VideoClip
       value: 
-      objectReference: {fileID: 32900000, guid: 0a6dacfa3611e1b48b32a4b83d704aea, type: 3}
+      objectReference: {fileID: 32900000, guid: e3f28110871912c45afc3593739c94e8, type: 3}
     - target: {fileID: 8010199463447016914, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_AspectRatio
       value: 3
@@ -1384,7 +1384,7 @@ PrefabInstance:
     - target: {fileID: 8010199463447016914, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_VideoClip
       value: 
-      objectReference: {fileID: 32900000, guid: 598bb7ac685c5d34a853d95b39f1eadd, type: 3}
+      objectReference: {fileID: 32900000, guid: 426e1c63e0ee4e24db0b5da1ab79ebc2, type: 3}
     - target: {fileID: 8010199463447016914, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_ControlledAudioTrackCount
       value: 1
