@@ -12,6 +12,7 @@ TagManager:
   - GameOver
   - Skip
   - ExitVideo
+  - Timer
   layers:
   - Default
   - TransparentFX

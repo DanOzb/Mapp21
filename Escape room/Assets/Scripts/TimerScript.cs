@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Timer : MonoBehaviour
+public class TimerScript : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
-    private float remainingTime;
+    [SerializeField] GameObject WinOrLoseObject;
+    public float remainingTime;
 
     private void Start()
     {
@@ -18,6 +19,8 @@ public class Timer : MonoBehaviour
         if (remainingTime < 0)
         {
             remainingTime = 0;
+            if(WinOrLoseObject != null)
+                WinOrLoseObject.SetActive(true);
         }
         else if (remainingTime > 0)
             remainingTime -= Time.deltaTime;

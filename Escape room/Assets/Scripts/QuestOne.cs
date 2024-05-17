@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +9,7 @@ public class QuestOne : MonoBehaviour
     [SerializeField] private Transform gameTransform;
     [SerializeField] private Transform piecePrefab;
     [SerializeField] private GameObject videoController;
-    [SerializeField] private GameObject questController;
+    [SerializeField] private GameObject gameOverScreen;
 
     private List<Transform> pieces;
     private int emptyLocation;
@@ -69,6 +70,7 @@ public class QuestOne : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+                
         // Check for completion.
         if (!shuffling && CheckCompletion())
         {
