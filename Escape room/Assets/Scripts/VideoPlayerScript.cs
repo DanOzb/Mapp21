@@ -7,11 +7,14 @@ using UnityEngine.Video;
 
 public class VideoPlayerScript : MonoBehaviour
 {
+    private bool videoPlayed = false;
     private GameObject room;
     private GameObject skipButton;
     private new GameObject camera;
     private VideoPlayer videoPlayer;
-    [SerializeField] VideoPlayer exitVideo; 
+    [SerializeField] VideoPlayer exitVideo;
+    [SerializeField] VideoPlayer[] extraVideo; //index 0 == comply video. index 1 == rage video
+    [SerializeField] GameObject pauseMenu;
 
     private void Start()
     {
@@ -50,25 +53,24 @@ public class VideoPlayerScript : MonoBehaviour
     }
 
     //tar emot en videoplayer, spelar den och kallar nästa object från QuestController
-    public void PlayExtraVideos(VideoPlayer vp)
+    public void PlayExtraVideos(GameObject obj)
     {
+        obj.SetActive(false);
         skipButton.SetActive(true);
-        videoPlayer = vp;
+        videoPlayer = extraVideo[QuestController.rageOrComply];
         videoPlayer.targetCamera = camera.GetComponent<Camera>();
         videoPlayer.Play();
         videoPlayer.loopPointReached += SetActiveFalse;
+
     }
-    //sätter objektet till false
-    public void SetActiveFalse(GameObject obj)
-    {
-        obj.SetActive(false);
-        skipButton.SetActive(false);
-        this.gameObject.transform.GetChild(0).GetComponent<QuestController>().Play(1);
-    }
+
     //sätter videoplayer objektet till false
     public void SetActiveFalse(VideoPlayer vp)
     {
-        SetActiveFalse(vp.gameObject);
+        vp.gameObject.SetActive(false);
+        skipButton.SetActive(false);
+        this.gameObject.transform.GetChild(0).GetComponent<QuestController>().Play(1);
+
     }
     //spolar fram framecount så att EndReached påkallas av playVideo
     public void SkipVideo()
@@ -90,5 +92,18 @@ public class VideoPlayerScript : MonoBehaviour
     void ExitReached(VideoPlayer vp)
     {
         SceneManager.LoadScene(2);
+    }
+
+    public void pauseGame()
+    {
+        videoPlayer.Pause();
+        pauseMenu.SetActive(true);
+    }
+
+
+    public void resumeGame()
+    {
+        videoPlayer.Play();
+        pauseMenu.SetActive(false);
     }
 }

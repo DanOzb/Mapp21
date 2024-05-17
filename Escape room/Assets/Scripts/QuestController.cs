@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class QuestController : MonoBehaviour
 {
+    public static int rageOrComply = 0;
+
     //Hittar questContainer, kollar om en quest finns och om den finns så aktiveras den
     public void Play(int index)
     {
@@ -15,5 +18,11 @@ public class QuestController : MonoBehaviour
         {
             questObject.transform.GetChild(index).gameObject.SetActive(true);
         }
+    }
+
+    public void Rage(bool rage)
+    {
+        if (rage)
+            rageOrComply++;
     }
 }

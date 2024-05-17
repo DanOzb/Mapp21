@@ -8,6 +8,7 @@ public class QuestOne : MonoBehaviour
     [SerializeField] private Transform gameTransform;
     [SerializeField] private Transform piecePrefab;
     [SerializeField] private GameObject videoController;
+    [SerializeField] private GameObject questController;
 
     private List<Transform> pieces;
     private int emptyLocation;
