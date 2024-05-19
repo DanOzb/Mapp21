@@ -1286,12 +1286,12 @@ VideoPlayer:
   m_VideoClip: {fileID: 32900000, guid: 7c8ad0f94ea11994ba5e35c7a93d9c83, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
-  m_TargetCamera: {fileID: 0}
+  m_TargetCamera: {fileID: 1622414574}
   m_TargetTexture: {fileID: 0}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
-  m_RenderMode: 2
+  m_RenderMode: 1
   m_AspectRatio: 2
   m_DataSource: 0
   m_TimeUpdateMode: 2
@@ -1514,7 +1514,7 @@ MonoBehaviour:
   endingBScreen: {fileID: 78214511}
   endingCScreen: {fileID: 1638988804}
   videoController: {fileID: 569820953}
-  canvas: {fileID: 0}
+  canvas: {fileID: 112221248}
 --- !u!4 &844441524
 Transform:
   m_ObjectHideFlags: 0
