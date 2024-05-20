@@ -239,6 +239,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GoToHomeScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 4187261493309441559, guid: e14aa9e309ff5cc41b6f789b13411345, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9c12f100dcd739d4da14b61e5d6b0a37, type: 3}
     - target: {fileID: 6840228323030264971, guid: e14aa9e309ff5cc41b6f789b13411345, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
