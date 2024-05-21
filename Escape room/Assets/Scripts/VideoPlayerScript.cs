@@ -7,10 +7,13 @@ using UnityEngine.Video;
 
 public class VideoPlayerScript : MonoBehaviour
 {
+    private float clipLength;
     private bool videoPlayed = false;
     private GameObject room;
     private GameObject skipButton;
+    private GameObject questContainer;
     private new GameObject camera;
+    VideoPlayer questVideo;
     private VideoPlayer videoPlayer;
     [SerializeField] VideoPlayer exitVideo;
     [SerializeField] VideoPlayer[] extraVideo; //index 0 == comply video. index 1 == rage video
@@ -22,6 +25,8 @@ public class VideoPlayerScript : MonoBehaviour
         room = GameObject.FindGameObjectWithTag("Room");
         camera = GameObject.FindGameObjectWithTag("MainCamera");
         skipButton = GameObject.FindGameObjectWithTag("Skip");
+        questContainer = GameObject.FindGameObjectWithTag("Container");
+
         playVideo();
         allAudioSources = new List<AudioSource>(FindObjectsOfType<AudioSource>());
     }
@@ -30,13 +35,17 @@ public class VideoPlayerScript : MonoBehaviour
     void playVideo()
     {
 
-        //spelar den fˆrsta videon frÂn room
+        //spelar den f√∂rsta videon fr√•n room
         videoPlayer = room.GetComponentInChildren<VideoPlayer>();
         
         if (videoPlayer == null)
         {
-            //hittar QuestController som ska finnas i barnobjektet
+            if (!(questContainer.transform.GetChild(0).tag == "Quest"))
+            {
+                questVideo = questContainer.transform.GetChild(0).GetComponentInChildren<VideoPlayer>();
+            }
             skipButton.SetActive(false);
+            //hittar QuestController som ska finnas i barnobjektet
             this.gameObject.transform.GetChild(0).GetComponent<QuestController>().Play(0);
         }
         else
@@ -47,14 +56,14 @@ public class VideoPlayerScript : MonoBehaviour
         }
     }
 
-    //pÂkallas av playvideo n‰r videon har nÂtt slutet
+    //p√•kallas av playvideo n√§r videon har n√•tt slutet
     void EndReached( VideoPlayer vp)
     {
         videoPlayer.gameObject.SetActive(false);
         playVideo();
     }
 
-    //tar emot en videoplayer, spelar den och kallar n‰sta object frÂn QuestController
+    //tar emot en videoplayer, spelar den och kallar n√§sta object fr√•n QuestController
     public void PlayExtraVideos(GameObject obj)
     {
         obj.SetActive(false);
@@ -66,7 +75,7 @@ public class VideoPlayerScript : MonoBehaviour
 
     }
 
-    //s‰tter videoplayer objektet till false
+    //s√§tter videoplayer objektet till false
     public void SetActiveFalse(VideoPlayer vp)
     {
         vp.gameObject.SetActive(false);
@@ -74,7 +83,7 @@ public class VideoPlayerScript : MonoBehaviour
         this.gameObject.transform.GetChild(0).GetComponent<QuestController>().Play(1);
 
     }
-    //spolar fram framecount sÂ att EndReached pÂkallas av playVideo
+    //spolar fram framecount s√• att EndReached p√•kallas av playVideo
     public void SkipVideo()
     {
         ulong frameCount = videoPlayer.clip.frameCount - 1;
@@ -98,15 +107,21 @@ public class VideoPlayerScript : MonoBehaviour
 
     public void pauseGame()
     {
-        videoPlayer.Pause();
+        if(videoPlayer != null)
+            videoPlayer.Pause();
+        else
+            questVideo.Pause();
+        
         pauseMenu.SetActive(true);
         PauseAllAudio();
     }
 
-
     public void resumeGame()
     {
-        videoPlayer.Play();
+        if(videoPlayer != null)
+            videoPlayer.Play();
+        else 
+            questVideo.Play();
         pauseMenu.SetActive(false);
         ResumeAllAudio();
     }
