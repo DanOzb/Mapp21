@@ -849,6 +849,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExitVideo
       objectReference: {fileID: 0}
+    - target: {fileID: 3061223985407244614, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6343030571137169490, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

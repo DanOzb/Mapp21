@@ -15,6 +15,7 @@ public class VideoPlayerScript : MonoBehaviour
     [SerializeField] VideoPlayer exitVideo;
     [SerializeField] VideoPlayer[] extraVideo; //index 0 == comply video. index 1 == rage video
     [SerializeField] GameObject pauseMenu;
+    private List<AudioSource> allAudioSources;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class VideoPlayerScript : MonoBehaviour
         camera = GameObject.FindGameObjectWithTag("MainCamera");
         skipButton = GameObject.FindGameObjectWithTag("Skip");
         playVideo();
+        allAudioSources = new List<AudioSource>(FindObjectsOfType<AudioSource>());
     }
 
     //spelar videos
@@ -98,6 +100,7 @@ public class VideoPlayerScript : MonoBehaviour
     {
         videoPlayer.Pause();
         pauseMenu.SetActive(true);
+        PauseAllAudio();
     }
 
 
@@ -105,5 +108,28 @@ public class VideoPlayerScript : MonoBehaviour
     {
         videoPlayer.Play();
         pauseMenu.SetActive(false);
+        ResumeAllAudio();
+    }
+
+    private void PauseAllAudio()
+    {
+        foreach (AudioSource audio in allAudioSources)
+        {
+            if (audio.isPlaying)
+            {
+                audio.Pause();
+            }
+        }
+    }
+
+    private void ResumeAllAudio()
+    {
+        foreach (AudioSource audio in allAudioSources)
+        {
+            if (audio.time > 0)
+            {
+                audio.UnPause();
+            }
+        }
     }
 }
