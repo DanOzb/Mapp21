@@ -9,29 +9,14 @@ using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
-    private float desiredAlpha = 0f;
-    private float time = 1f;
-    [SerializeField] Image background;
-    [SerializeField] Button play;
-    [SerializeField] Button settings;
-    [SerializeField] TextMeshProUGUI playText;
-    [SerializeField] TextMeshProUGUI settingsText;
     [SerializeField] GameObject settingsPanel;
+    [SerializeField] Animator transition;
+    public float transitionsTime = 1f;
 
     public void StartGame()
     {
         RoomController.roomNumbers = 0;
-        Invoke("FadeOut", 0.2f);
-        Invoke("LoadGame", time + 0.3f);
-    }
-
-    private void FadeOut()
-    {
-        background.CrossFadeAlpha(desiredAlpha, time+1, false);
-        play.image.CrossFadeAlpha(desiredAlpha, time, false);
-        playText.CrossFadeAlpha(desiredAlpha, time, false);
-        settings.image.CrossFadeAlpha(desiredAlpha, time, false);
-        settingsText.CrossFadeAlpha(desiredAlpha, time, false);
+        StartCoroutine(loadGame(1));
     }
 
     public void ShowSettings()
@@ -44,18 +29,13 @@ public class MenuController : MonoBehaviour
         settingsPanel.SetActive(false);
     }
 
-    private void LoadGame()
+   
+    IEnumerator loadGame(int index)
     {
-        SceneManager.LoadScene(1);
-    }
+        transition.SetTrigger("Start");
 
-    public void OnButtonClick(Button button)
-    {
-        if(button == play)
-        {
-            play.interactable = false;
-            settings.interactable = false;
-        }
-    }
+        yield return new WaitForSeconds(transitionsTime);
 
+        SceneManager.LoadScene(index);
+    }
 }
