@@ -40,7 +40,8 @@ public class VideoPlayerScript : MonoBehaviour
         
         if (videoPlayer == null)
         {
-            if (!(questContainer.transform.GetChild(0).tag == "Quest"))
+            if (!(questContainer.transform.GetChild(0).tag == "Quest") &&
+                questContainer.transform.GetChild(0).GetComponentInChildren<VideoPlayer>() != null)
             {
                 questVideo = questContainer.transform.GetChild(0).GetComponentInChildren<VideoPlayer>();
             }

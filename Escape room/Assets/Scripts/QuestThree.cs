@@ -9,13 +9,15 @@ public class QuestThree : MonoBehaviour
     public bool lost = false;
     public bool won = false;
     private float tilt;
-    private float moveSpeed = 40f; 
+    private float moveSpeed = 40f;
+    private GameObject questContainer;
     private Rigidbody2D rigid;
     [SerializeField] GameObject gameOverScreen;
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         Invoke("GameWon", 10);
+        questContainer = GameObject.FindGameObjectWithTag("Quest");
     }
 
     //ta bort innan muntan
@@ -35,6 +37,7 @@ public class QuestThree : MonoBehaviour
         if (!lost)
         {
             won = true;
+            questContainer.SetActive(false);
             //gör något
             SceneManager.LoadScene(2);
         }
@@ -58,6 +61,7 @@ public class QuestThree : MonoBehaviour
         {
             if (!won)
             {
+                questContainer.SetActive(false);
                 gameOverScreen.SetActive(true);
                 lost = true;
             }
