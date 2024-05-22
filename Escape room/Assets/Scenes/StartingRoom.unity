@@ -224,7 +224,7 @@ PrefabInstance:
     - target: {fileID: 8010199463447016914, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_TargetCamera
       value: 
-      objectReference: {fileID: 591853618}
+      objectReference: {fileID: 0}
     - target: {fileID: 8010199463447016914, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_ControlledAudioTrackCount
       value: 1
@@ -549,6 +549,10 @@ PrefabInstance:
     - target: {fileID: 4647247033681751444, guid: 4749527e0229dbc4eb27f9ac00695294, type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 4647247033681751444, guid: 4749527e0229dbc4eb27f9ac00695294, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6044042205398416825, guid: 4749527e0229dbc4eb27f9ac00695294, type: 3}
       propertyPath: m_TargetTexture
@@ -1126,6 +1130,10 @@ PrefabInstance:
     - target: {fileID: 2624757020264082573, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
       propertyPath: m_Name
       value: VideoController
+      objectReference: {fileID: 0}
+    - target: {fileID: 2624757020264082573, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6073980759906221259, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
       propertyPath: m_LocalPosition.x

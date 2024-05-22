@@ -7,8 +7,6 @@ using UnityEngine.Video;
 
 public class VideoPlayerScript : MonoBehaviour
 {
-    private float clipLength;
-    private bool videoPlayed = false;
     private GameObject room;
     private GameObject skipButton;
     private GameObject questContainer;
@@ -26,17 +24,20 @@ public class VideoPlayerScript : MonoBehaviour
         camera = GameObject.FindGameObjectWithTag("MainCamera");
         skipButton = GameObject.FindGameObjectWithTag("Skip");
         questContainer = GameObject.FindGameObjectWithTag("Container");
-
-        playVideo();
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+            Invoke("PlayVideo", 0.5f);
+        else
+            PlayVideo();
         allAudioSources = new List<AudioSource>(FindObjectsOfType<AudioSource>());
     }
 
     //spelar videos
-    void playVideo()
+    void PlayVideo()
     {
 
         //spelar den första videon från room
         videoPlayer = room.GetComponentInChildren<VideoPlayer>();
+        Debug.Log(videoPlayer);
         
         if (videoPlayer == null)
         {
@@ -45,7 +46,8 @@ public class VideoPlayerScript : MonoBehaviour
             {
                 questVideo = questContainer.transform.GetChild(0).GetComponentInChildren<VideoPlayer>();
             }
-            skipButton.SetActive(false);
+            if(skipButton != null)
+                skipButton.SetActive(false);
             //hittar QuestController som ska finnas i barnobjektet
             this.gameObject.transform.GetChild(0).GetComponent<QuestController>().Play(0);
         }
@@ -60,8 +62,9 @@ public class VideoPlayerScript : MonoBehaviour
     //påkallas av playvideo när videon har nått slutet
     void EndReached( VideoPlayer vp)
     {
+        Debug.Log("End reached");
         videoPlayer.gameObject.SetActive(false);
-        playVideo();
+        PlayVideo();
     }
 
     //tar emot en videoplayer, spelar den och kallar nästa object från QuestController
