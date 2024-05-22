@@ -113,7 +113,7 @@ public class VideoPlayerScript : MonoBehaviour
     {
         if(videoPlayer != null)
             videoPlayer.Pause();
-        else
+        else if(questVideo != null)
             questVideo.Pause();
         
         pauseMenu.SetActive(true);

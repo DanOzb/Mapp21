@@ -6,33 +6,52 @@ using UnityEngine.SceneManagement;
 
 public class RoomController : MonoBehaviour
 {
-    public int roomNumber;
+    private int roomNumber;
     public static int roomNumbers;
-    private GameObject[] buttons;
+    private static int questNumbers;
+    private List<int> roomList;
+    [SerializeField] GameObject[] buttons;
 
     private void Start()
     {
+        roomList = new List<int>();
         buttons = GameObject.FindGameObjectsWithTag("Button");
         Char[] arr = roomNumbers.ToString().ToCharArray();
+        List<char> questArr = new List<char>();
+        questArr.AddRange(questNumbers.ToString().ToCharArray());
         int temp = 0;
-        foreach (GameObject button in buttons)
+
+        for(int i = 0; i < 4; i++)
         {
-            foreach (char c in arr)
+            if (!questArr.Contains(((char)i)))
             {
-                if (button.name.Contains(c))
-                {
-                    button.SetActive(false);
-                    temp++;
-                }
+                roomList.Add(i);
+            }
+        }
+
+        foreach(char c in arr)
+        {
+            Debug.Log(c);
+            int number = Int32.Parse(c.ToString());
+            number--;
+            if (number >= 0)
+            {
+                buttons[number].SetActive(false);
+                temp++;
             }
         }
         if (temp == 4)
             SceneManager.LoadScene(0);
+
     }
 
     public void EnterRoom()
     {
+        if (roomList.Count == 0)
+            SceneManager.LoadScene(6); //rum 4
+        roomNumber = roomList[UnityEngine.Random.Range(0, roomList.Count)]; //rum 1-3
         SceneManager.LoadScene(roomNumber + 2);
+        Debug.Log(roomList.Count);
     }
 
     public void GoBackToMenu()
@@ -41,10 +60,9 @@ public class RoomController : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void PickRoom(int number)
+    public void Room(int number)
     {
-        roomNumber = number;
-        roomNumbers = Int32.Parse(number.ToString() + roomNumbers.ToString());
+        roomNumbers = Int32.Parse(roomNumbers.ToString() + number.ToString());
     }
 
 }
