@@ -15,7 +15,8 @@ public class Room4 : MonoBehaviour
 
     public void OptionA()
     {
-        videoController.SetActive(false);
+        videoController.transform.GetChild(1).gameObject.SetActive(false);
+        videoController.transform.GetChild(2).gameObject.transform.GetChild(0).gameObject.SetActive(false);
         canvas.SetActive(false);
         if(endingA.clip != null)
         {
@@ -34,7 +35,8 @@ public class Room4 : MonoBehaviour
 
     public void OptionB()
     {
-        videoController.SetActive(false);
+        videoController.transform.GetChild(1).gameObject.SetActive(false);
+        videoController.transform.GetChild(2).gameObject.transform.GetChild(0).gameObject.SetActive(false);
         canvas.SetActive(false);
         if (endingB.clip != null)
         {
@@ -52,7 +54,8 @@ public class Room4 : MonoBehaviour
 
     public void OptionC()
     {
-        videoController.SetActive(false);
+        videoController.transform.GetChild(1).gameObject.SetActive(false);
+        videoController.transform.GetChild(2).gameObject.transform.GetChild(0).gameObject.SetActive(false);
         canvas.SetActive(false);
         if (endingC.clip != null)
         {

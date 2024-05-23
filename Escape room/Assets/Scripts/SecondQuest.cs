@@ -38,7 +38,8 @@ public class SecondQuest : MonoBehaviour
         if (answerIndex == correctAnswers[currentQuestionIndex])
         {
             Debug.Log("Rätt Svar, du överlever!");
-            SceneManager.LoadScene(2);
+            TransitionScript.sceneToLoad = 2;
+            TransitionScript.nextTransition = true;
         }
         else
         {

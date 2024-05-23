@@ -16,7 +16,7 @@ public class TransitionScript : MonoBehaviour
 
     private void Update()
     {
-        if (nextTransition)
+        if (nextTransition && !transitioning)
         {
             transitioning = true;
             LoadScene(sceneToLoad);

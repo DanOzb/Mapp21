@@ -7,17 +7,18 @@ using UnityEngine.Video;
 
 public class VideoPlayerScript : MonoBehaviour
 {
-    private GameObject questContainer, levelLoader, camera, skipButton, room;
+    private GameObject questContainer, camera, skipButton, room;
     VideoPlayer questVideo;
     private VideoPlayer videoPlayer;
     [SerializeField] VideoPlayer exitVideo;
     [SerializeField] VideoPlayer[] extraVideo; //index 0 == comply video. index 1 == rage video
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] Animator transition;
     private List<AudioSource> allAudioSources;
+    private bool _isPressed = false;
 
     private void Start()
     {
-        levelLoader = GameObject.FindGameObjectWithTag("LevelLoader");
         room = GameObject.FindGameObjectWithTag("Room");
         camera = GameObject.FindGameObjectWithTag("MainCamera");
         skipButton = GameObject.FindGameObjectWithTag("Skip");
@@ -33,6 +34,7 @@ public class VideoPlayerScript : MonoBehaviour
             pauseGame();
         else if(!PauseMenu._pause && pauseMenu.activeSelf)
             resumeGame();
+
     }
 
 
@@ -70,12 +72,14 @@ public class VideoPlayerScript : MonoBehaviour
     {
         Debug.Log("End reached");
         videoPlayer.gameObject.SetActive(false);
+        transition.SetTrigger("Transition");
         PlayVideo();
     }
 
     //tar emot en videoplayer, spelar den och kallar nästa object från QuestController
     public void PlayExtraVideos(GameObject obj)
     {
+        transition.SetTrigger("Transition");
         obj.SetActive(false);
         skipButton.SetActive(true);
         videoPlayer = extraVideo[QuestController.rageOrComply];
@@ -89,6 +93,7 @@ public class VideoPlayerScript : MonoBehaviour
     {
         vp.gameObject.SetActive(false);
         skipButton.SetActive(false);
+        transition.SetTrigger("Transition");
         this.gameObject.transform.GetChild(0).GetComponent<QuestController>().Play(1);
 
     }
@@ -101,6 +106,7 @@ public class VideoPlayerScript : MonoBehaviour
 
     public void ExitVideo()
     {
+        transition.SetTrigger("Transition");
         GameObject.FindGameObjectWithTag("Container").SetActive(false);
         skipButton.SetActive(true);
         videoPlayer = exitVideo;
