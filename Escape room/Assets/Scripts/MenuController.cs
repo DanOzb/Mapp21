@@ -10,13 +10,12 @@ using UnityEngine.UI;
 public class MenuController : MonoBehaviour
 {
     [SerializeField] GameObject settingsPanel;
-    [SerializeField] Animator transition;
-    public float transitionsTime = 1f;
 
     public void StartGame()
     {
         RoomController.roomNumbers = 0;
-        StartCoroutine(loadGame(1));
+        TransitionScript.sceneToLoad = 1;
+        TransitionScript.nextTransition = true;
     }
 
     public void ShowSettings()
@@ -27,15 +26,5 @@ public class MenuController : MonoBehaviour
     public void CloseSettings()
     {
         settingsPanel.SetActive(false);
-    }
-
-   
-    IEnumerator loadGame(int index)
-    {
-        transition.SetTrigger("Start");
-
-        yield return new WaitForSeconds(transitionsTime);
-
-        SceneManager.LoadScene(index);
     }
 }
