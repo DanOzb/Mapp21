@@ -13,6 +13,7 @@ TagManager:
   - Skip
   - ExitVideo
   - Timer
+  - PauseScriptObject
   layers:
   - Default
   - TransparentFX

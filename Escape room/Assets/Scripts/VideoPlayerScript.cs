@@ -31,6 +31,16 @@ public class VideoPlayerScript : MonoBehaviour
         allAudioSources = new List<AudioSource>(FindObjectsOfType<AudioSource>());
     }
 
+    private void Update()
+    {
+        if(PauseMenu._pause && !pauseMenu.activeSelf)
+            pauseGame();
+        else if(!PauseMenu._pause && pauseMenu.activeSelf)
+            resumeGame();
+    }
+
+
+
     //spelar videos
     void PlayVideo()
     {
