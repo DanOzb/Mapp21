@@ -1295,6 +1295,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timer
       objectReference: {fileID: 0}
+    - target: {fileID: 9010775635575598956, guid: d0044003553b5cc48817f644b7b98bb4, type: 3}
+      propertyPath: m_fontSize
+      value: 76
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010775635575598956, guid: d0044003553b5cc48817f644b7b98bb4, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8caa5613b43b9ac43be73c296a90c37d, type: 2}
+    - target: {fileID: 9010775635575598956, guid: d0044003553b5cc48817f644b7b98bb4, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 76
+      objectReference: {fileID: 0}
+    - target: {fileID: 9010775635575598956, guid: d0044003553b5cc48817f644b7b98bb4, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
