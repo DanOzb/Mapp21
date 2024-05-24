@@ -547,7 +547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3061223985407244614, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6343030571137169490, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_LocalPosition.x
@@ -600,7 +600,7 @@ PrefabInstance:
     - target: {fileID: 8010199463447016914, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_TargetCamera
       value: 
-      objectReference: {fileID: 1622414574}
+      objectReference: {fileID: 0}
     - target: {fileID: 8010199463447016914, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_ControlledAudioTrackCount
       value: 1
@@ -1147,11 +1147,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
---- !u!4 &441644360 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
-  m_PrefabInstance: {fileID: 559017783}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &520683094
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,68 +1282,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520683094}
   m_CullTransparentMesh: 1
---- !u!1001 &559017783
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1506670937}
-    m_Modifications:
-    - target: {fileID: 4996976960843420989, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
-      propertyPath: m_Name
-      value: SkipVideoButton (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677064762418031245, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4766561232c7981448aa6271027cbd2d, type: 3}
 --- !u!1 &569820953 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2624757020264082573, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
   m_PrefabInstance: {fileID: 369099636}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &569820954 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1365096855582798668, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
+  m_PrefabInstance: {fileID: 369099636}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 569820953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d1ae38e29865e42871ed1b5fb2bfbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &573684513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1683,7 +1632,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 129389728}
-  - {fileID: 1506670937}
   - {fileID: 573684514}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1821,58 +1769,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 773891876}
   m_CullTransparentMesh: 1
---- !u!1 &844441522
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 844441524}
-  - component: {fileID: 844441523}
-  m_Layer: 0
-  m_Name: Options - A B C
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &844441523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 844441522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a1a084f396cd5849a2a1756a63fd7bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  endingA: {fileID: 129389729}
-  endingB: {fileID: 859586674}
-  endingC: {fileID: 930743338}
-  endingAScreen: {fileID: 573684516}
-  endingBScreen: {fileID: 78214511}
-  endingCScreen: {fileID: 1638988804}
-  videoController: {fileID: 569820953}
-  canvas: {fileID: 112221248}
---- !u!4 &844441524
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 844441522}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 402.50134, y: 188.35059, z: -3.382536}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &859586672
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1887,7 +1783,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3061223985407244614, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6343030571137169490, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1936,7 +1832,7 @@ PrefabInstance:
     - target: {fileID: 8010199463447016914, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_TargetCamera
       value: 
-      objectReference: {fileID: 1622414574}
+      objectReference: {fileID: 0}
     - target: {fileID: 8010199463447016914, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_ControlledAudioTrackCount
       value: 1
@@ -2063,16 +1959,28 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 844441523}
+      - m_Target: {fileID: 569820954}
+        m_TargetAssemblyTypeName: VideoPlayerScript, Assembly-CSharp
+        m_MethodName: PlayExtraVideos
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 859586674}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1450851949}
         m_TargetAssemblyTypeName: Room4, Assembly-CSharp
-        m_MethodName: OptionB
-        m_Mode: 1
+        m_MethodName: SetVideo
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: B
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &864399560
@@ -2127,7 +2035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3061223985407244614, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6343030571137169490, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2176,7 +2084,7 @@ PrefabInstance:
     - target: {fileID: 8010199463447016914, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_TargetCamera
       value: 
-      objectReference: {fileID: 1622414574}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2275,16 +2183,28 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 844441523}
+      - m_Target: {fileID: 569820954}
+        m_TargetAssemblyTypeName: VideoPlayerScript, Assembly-CSharp
+        m_MethodName: PlayExtraVideos
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 930743338}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1450851949}
         m_TargetAssemblyTypeName: Room4, Assembly-CSharp
-        m_MethodName: OptionC
-        m_Mode: 1
+        m_MethodName: SetVideo
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: C
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1071566029
@@ -2325,72 +2245,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1071566026}
   m_CullTransparentMesh: 1
---- !u!1001 &1344864186
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 699653902}
-    m_Modifications:
-    - target: {fileID: 2624757020264082573, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
-      propertyPath: m_Name
-      value: VideoController
-      objectReference: {fileID: 0}
-    - target: {fileID: 2624757020264082573, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6073980759906221259, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6073980759906221259, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6073980759906221259, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6073980759906221259, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6073980759906221259, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6073980759906221259, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6073980759906221259, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6073980759906221259, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6073980759906221259, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6073980759906221259, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 6699483862556977225, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
-    - {fileID: 2179701060312824734, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 6073980759906221259, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 441644360}
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
 --- !u!1 &1450851947
 GameObject:
   m_ObjectHideFlags: 0
@@ -2400,6 +2254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1450851948}
+  - component: {fileID: 1450851949}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -2423,6 +2278,24 @@ Transform:
   - {fileID: 112221249}
   m_Father: {fileID: 1594605064}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1450851949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450851947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a1a084f396cd5849a2a1756a63fd7bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endingAScreen: {fileID: 573684516}
+  endingBScreen: {fileID: 78214511}
+  endingCScreen: {fileID: 1638988804}
+  videoController: {fileID: 569820953}
+  canvas: {fileID: 112221248}
+  ending: 
 --- !u!1 &1466473845
 GameObject:
   m_ObjectHideFlags: 0
@@ -2456,11 +2329,6 @@ Transform:
   - {fileID: 859586673}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1506670937 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6073980759906221259, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
-  m_PrefabInstance: {fileID: 1344864186}
-  m_PrefabAsset: {fileID: 0}
 --- !u!328 &1554344975 stripped
 VideoPlayer:
   m_CorrespondingSourceObject: {fileID: 8538678194416778741, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
@@ -3019,16 +2887,28 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 844441523}
+      - m_Target: {fileID: 569820954}
+        m_TargetAssemblyTypeName: VideoPlayerScript, Assembly-CSharp
+        m_MethodName: PlayExtraVideos
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 129389729}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1450851949}
         m_TargetAssemblyTypeName: Room4, Assembly-CSharp
-        m_MethodName: OptionA
-        m_Mode: 1
+        m_MethodName: SetVideo
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: A
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1693709254
@@ -3212,7 +3092,6 @@ SceneRoots:
   - {fileID: 369099636}
   - {fileID: 154720930}
   - {fileID: 1793745329}
-  - {fileID: 844441524}
   - {fileID: 699653902}
   - {fileID: 1466473846}
   - {fileID: 1857738737}
