@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &97597763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,8 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   videoController: {fileID: 1876255652}
   questContainer: {fileID: 1277177623}
-  redPill: {fileID: 1595475308}
-  bluePill: {fileID: 294046458}
 --- !u!4 &97597764
 Transform:
   m_ObjectHideFlags: 0
@@ -508,6 +506,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
+--- !u!114 &384498101 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1365096855582798668, guid: 72be93ecd0aaa9c4898fadae6d56bdfa, type: 3}
+  m_PrefabInstance: {fileID: 384498100}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876255652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d1ae38e29865e42871ed1b5fb2bfbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &609901559
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,6 +1002,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1277177624}
+  - component: {fileID: 1277177625}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1013,10 +1023,24 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 233232765}
   - {fileID: 1833273660}
+  - {fileID: 233232765}
   m_Father: {fileID: 1673928518}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1277177625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277177623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd7ca4512d711b488705a5fcbb765d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoController: {fileID: 1876255652}
+  questContainer: {fileID: 1277177623}
 --- !u!1 &1291899691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,13 +1304,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 97597763}
-        m_TargetAssemblyTypeName: Room3Buttons, Assembly-CSharp
-        m_MethodName: BluePill
-        m_Mode: 1
+      - m_Target: {fileID: 384498101}
+        m_TargetAssemblyTypeName: VideoPlayerScript, Assembly-CSharp
+        m_MethodName: PlayExtraVideos
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 294046458}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1470,13 +1494,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 97597763}
-        m_TargetAssemblyTypeName: Room3Buttons, Assembly-CSharp
-        m_MethodName: RedPill
-        m_Mode: 1
+      - m_Target: {fileID: 384498101}
+        m_TargetAssemblyTypeName: VideoPlayerScript, Assembly-CSharp
+        m_MethodName: PlayExtraVideos
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1595475308}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

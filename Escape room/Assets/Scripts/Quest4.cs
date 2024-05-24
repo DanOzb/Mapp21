@@ -9,41 +9,24 @@ using UnityEngine.Video;
 
 public class Quest4 : MonoBehaviour
 {
-    private bool dead = false;
+    public static bool dead = false;
     [SerializeField] GameObject videoController, questContainer;
-    [SerializeField] VideoPlayer redPill, bluePill;
-    private float videoLength;
 
-    public void BluePill()
-        //Börja om från början
+    public void Dead()
     {
         dead = true;
-        questContainer.SetActive(false);
-        videoLength = (float) (bluePill.clip.length + 0.5);
-        bluePill.Play();
-        Invoke("EndReached", videoLength);
-    }
-
-    public void RedPill()
-        //Gå vidare till ChooseRoom 4
-    {
-        questContainer.SetActive(false);
-        videoLength = (float) (redPill.clip.length + 0.5);
-        redPill.Play();
-        Invoke("EndReached", videoLength );
     }
 
     public void EndReached()
     {
         if (dead)
         {
-            bluePill.gameObject.SetActive(false);
             RoomController.roomNumbers = 0;
             TransitionScript.sceneToLoad = 1;
             TransitionScript.nextTransition = true;
+            dead = false;
         } else
         {
-            redPill.gameObject.SetActive(false);
             videoController.GetComponent<VideoPlayerScript>().ExitVideo();
         }
     }

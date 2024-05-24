@@ -11,7 +11,6 @@ public class VideoPlayerScript : MonoBehaviour
     VideoPlayer questVideo;
     private VideoPlayer videoPlayer;
     [SerializeField] VideoPlayer exitVideo;
-    [SerializeField] VideoPlayer[] extraVideo; //index 0 == comply video. index 1 == rage video
     [SerializeField] GameObject pauseMenu;
     [SerializeField] Animator transition;
     private List<AudioSource> allAudioSources;
@@ -77,12 +76,13 @@ public class VideoPlayerScript : MonoBehaviour
     }
 
     //tar emot en videoplayer, spelar den och kallar nästa object från QuestController
-    public void PlayExtraVideos(GameObject obj)
+    public void PlayExtraVideos(VideoPlayer vp)
     {
+        Debug.Log("play");
         transition.SetTrigger("Transition");
-        obj.SetActive(false);
+        questContainer.transform.GetChild(0).gameObject.SetActive(false);
         skipButton.SetActive(true);
-        videoPlayer = extraVideo[QuestController.rageOrComply];
+        videoPlayer = vp;
         videoPlayer.targetCamera = camera.GetComponent<Camera>();
         videoPlayer.Play();
         videoPlayer.loopPointReached += SetActiveFalse;
@@ -94,7 +94,12 @@ public class VideoPlayerScript : MonoBehaviour
         vp.gameObject.SetActive(false);
         skipButton.SetActive(false);
         transition.SetTrigger("Transition");
-        this.gameObject.transform.GetChild(0).GetComponent<QuestController>().Play(1);
+        if(SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            questContainer.transform.GetChild(0).GetComponent<Quest4>().EndReached();
+        }
+        else if (questContainer.transform.childCount >= 1)
+            this.transform.GetChild(0).GetComponent<QuestController>().Play(1);
 
     }
     //spolar fram framecount så att EndReached påkallas av playVideo
@@ -107,7 +112,6 @@ public class VideoPlayerScript : MonoBehaviour
     public void FastForward()
     {
         _isPressed = _isPressed ? false : true;
-        Debug.Log(_isPressed);
         videoPlayer.Pause();
         if( _isPressed )
         {
