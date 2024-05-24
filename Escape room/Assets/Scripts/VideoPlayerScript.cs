@@ -104,6 +104,22 @@ public class VideoPlayerScript : MonoBehaviour
         videoPlayer.frame = (long) frameCount;
     }
 
+    public void FastForward()
+    {
+        _isPressed = _isPressed ? false : true;
+        Debug.Log(_isPressed);
+        videoPlayer.Pause();
+        if( _isPressed )
+        {
+            videoPlayer.playbackSpeed = 4;
+            videoPlayer.Play();
+        } else
+        {
+            videoPlayer.playbackSpeed = 1;
+            videoPlayer.Play();
+        }
+    }
+
     public void ExitVideo()
     {
         transition.SetTrigger("Transition");
