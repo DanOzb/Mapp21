@@ -7,13 +7,16 @@ public class GameOverScript : MonoBehaviour
 {
     public void RestartGame()
     {
+        Debug.Log("pressed");
         RoomController.roomNumbers = 0;
-        SceneManager.LoadScene(1);
+        TransitionScript.sceneToLoad = 1;
+        TransitionScript.nextTransition = true;
     }
 
     public void GoToHomeScreen()
     {
-        SceneManager.LoadScene(0);
+        TransitionScript.sceneToLoad = 0;
+        TransitionScript.nextTransition = true;
     }
 
 }

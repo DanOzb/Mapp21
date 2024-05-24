@@ -7,13 +7,19 @@ using UnityEngine.SceneManagement;
 public class QuestController : MonoBehaviour
 {
     public static int rageOrComply = 0;
+    private GameObject levelLoader, questObject;
+
+    private void Start()
+    {
+        questObject = GameObject.FindGameObjectWithTag("Container");
+        levelLoader = GameObject.FindGameObjectWithTag("LevelLoader");
+    }
 
     //Hittar questContainer, kollar om en quest finns och om den finns så aktiveras den
     public void Play(int index)
     {
-        GameObject questObject = GameObject.FindGameObjectWithTag("Container");
         if (questObject.transform.childCount == 0)
-            SceneManager.LoadScene(2);
+            levelLoader.GetComponent<TransitionScript>().LoadScene(2);
         else
         {
             questObject.transform.GetChild(index).gameObject.SetActive(true);

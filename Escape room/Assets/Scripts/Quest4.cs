@@ -39,7 +39,8 @@ public class Quest4 : MonoBehaviour
         {
             bluePill.gameObject.SetActive(false);
             RoomController.roomNumbers = 0;
-            SceneManager.LoadScene(1);
+            TransitionScript.sceneToLoad = 1;
+            TransitionScript.nextTransition = true;
         } else
         {
             redPill.gameObject.SetActive(false);

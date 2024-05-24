@@ -49,8 +49,9 @@ public class RoomController : MonoBehaviour
     {
         if (roomList.Count == 0)
             SceneManager.LoadScene(6); //rum 4
-        roomNumber = roomList[UnityEngine.Random.Range(0, roomList.Count)]; //rum 1-3
-        SceneManager.LoadScene(roomNumber + 2);
+        roomNumber = roomList[UnityEngine.Random.Range(1, roomList.Count)] + 2; //rum 1-3
+        TransitionScript.sceneToLoad = roomNumber;
+        TransitionScript.nextTransition = true;
         Debug.Log(roomList.Count);
     }
 

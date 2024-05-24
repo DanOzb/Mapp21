@@ -7,16 +7,15 @@ using UnityEngine.Video;
 
 public class VideoPlayerScript : MonoBehaviour
 {
-    private GameObject room;
-    private GameObject skipButton;
-    private GameObject questContainer;
-    private new GameObject camera;
+    private GameObject questContainer, camera, skipButton, room;
     VideoPlayer questVideo;
     private VideoPlayer videoPlayer;
     [SerializeField] VideoPlayer exitVideo;
     [SerializeField] VideoPlayer[] extraVideo; //index 0 == comply video. index 1 == rage video
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] Animator transition;
     private List<AudioSource> allAudioSources;
+    private bool _isPressed = false;
 
     private void Start()
     {
@@ -24,11 +23,9 @@ public class VideoPlayerScript : MonoBehaviour
         camera = GameObject.FindGameObjectWithTag("MainCamera");
         skipButton = GameObject.FindGameObjectWithTag("Skip");
         questContainer = GameObject.FindGameObjectWithTag("Container");
-        if (SceneManager.GetActiveScene().buildIndex == 0)
-            Invoke("PlayVideo", 0.5f);
-        else
-            PlayVideo();
+
         allAudioSources = new List<AudioSource>(FindObjectsOfType<AudioSource>());
+        PlayVideo();
     }
 
     private void Update()
@@ -37,6 +34,7 @@ public class VideoPlayerScript : MonoBehaviour
             pauseGame();
         else if(!PauseMenu._pause && pauseMenu.activeSelf)
             resumeGame();
+
     }
 
 
@@ -47,8 +45,7 @@ public class VideoPlayerScript : MonoBehaviour
 
         //spelar den första videon från room
         videoPlayer = room.GetComponentInChildren<VideoPlayer>();
-        Debug.Log(videoPlayer);
-        
+
         if (videoPlayer == null)
         {
             if (!(questContainer.transform.GetChild(0).tag == "Quest") &&
@@ -56,7 +53,7 @@ public class VideoPlayerScript : MonoBehaviour
             {
                 questVideo = questContainer.transform.GetChild(0).GetComponentInChildren<VideoPlayer>();
             }
-            if(skipButton != null)
+            if (skipButton != null)
                 skipButton.SetActive(false);
             //hittar QuestController som ska finnas i barnobjektet
             this.gameObject.transform.GetChild(0).GetComponent<QuestController>().Play(0);
@@ -69,24 +66,26 @@ public class VideoPlayerScript : MonoBehaviour
         }
     }
 
+
     //påkallas av playvideo när videon har nått slutet
-    void EndReached( VideoPlayer vp)
+    void EndReached(VideoPlayer vp)
     {
         Debug.Log("End reached");
         videoPlayer.gameObject.SetActive(false);
+        transition.SetTrigger("Transition");
         PlayVideo();
     }
 
     //tar emot en videoplayer, spelar den och kallar nästa object från QuestController
     public void PlayExtraVideos(GameObject obj)
     {
+        transition.SetTrigger("Transition");
         obj.SetActive(false);
         skipButton.SetActive(true);
         videoPlayer = extraVideo[QuestController.rageOrComply];
         videoPlayer.targetCamera = camera.GetComponent<Camera>();
         videoPlayer.Play();
         videoPlayer.loopPointReached += SetActiveFalse;
-
     }
 
     //sätter videoplayer objektet till false
@@ -94,6 +93,7 @@ public class VideoPlayerScript : MonoBehaviour
     {
         vp.gameObject.SetActive(false);
         skipButton.SetActive(false);
+        transition.SetTrigger("Transition");
         this.gameObject.transform.GetChild(0).GetComponent<QuestController>().Play(1);
 
     }
@@ -104,8 +104,25 @@ public class VideoPlayerScript : MonoBehaviour
         videoPlayer.frame = (long) frameCount;
     }
 
+    public void FastForward()
+    {
+        _isPressed = _isPressed ? false : true;
+        Debug.Log(_isPressed);
+        videoPlayer.Pause();
+        if( _isPressed )
+        {
+            videoPlayer.playbackSpeed = 4;
+            videoPlayer.Play();
+        } else
+        {
+            videoPlayer.playbackSpeed = 1;
+            videoPlayer.Play();
+        }
+    }
+
     public void ExitVideo()
     {
+        transition.SetTrigger("Transition");
         GameObject.FindGameObjectWithTag("Container").SetActive(false);
         skipButton.SetActive(true);
         videoPlayer = exitVideo;
@@ -116,7 +133,8 @@ public class VideoPlayerScript : MonoBehaviour
 
     void ExitReached(VideoPlayer vp)
     {
-        SceneManager.LoadScene(2);
+        TransitionScript.sceneToLoad = 2;
+        TransitionScript.nextTransition = true;
     }
 
     public void pauseGame()

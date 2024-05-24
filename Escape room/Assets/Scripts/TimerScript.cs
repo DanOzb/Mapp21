@@ -14,6 +14,11 @@ public class TimerScript : MonoBehaviour
         remainingTime = 60 - QuestController.rageOrComply * 30;
     }
 
+    public void forceSetTime(int time)
+    {
+        remainingTime = time;
+    }
+
     void Update()
     {
         if (remainingTime < 0)
