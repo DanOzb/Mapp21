@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour
     [Range(0, 1)] public float voiceOverVolume = 1.0f;
     [Range(0, 1)] public float sfxVolume = 1.0f;
 
+    private float musicTime;
+
     private void Awake()
     {
         if (instance == null)
@@ -31,6 +33,19 @@ public class AudioManager : MonoBehaviour
     public void PlayMusic(AudioClip clip)
     {
         musicSource.clip = clip;
+        musicSource.time = musicTime;
+        musicSource.Play();
+    }
+
+    public void PauseMusic()
+    {
+        musicTime = musicSource.time;
+        musicSource.Pause();
+    }
+
+    public void ResumeMusic()
+    {
+        musicSource.time = musicTime;
         musicSource.Play();
     }
 
@@ -71,6 +86,39 @@ public class AudioManager : MonoBehaviour
         sfxSource.volume = sfxVolume;
     }
 
-    
+
+    public void ToggleMusic()
+    {
+        musicSource.mute = !musicSource.mute;
+    }
+
+    public void ToggleSfx()
+    {
+        sfxSource.mute = !sfxSource.mute;
+    }
+
+    public void ToggleVoiceOver()
+    {
+        voiceOverSource.mute = !voiceOverSource.mute;
+    }
+
+    public void MusicVolume(float volume)
+    {
+        musicSource.volume = volume;
+    }
+
+    public void SfxVolume(float volume)
+    {
+        sfxSource.volume = volume;
+    }
+
+    public void VoiceOverVolume(float volume)
+    {
+        voiceOverSource.volume = volume;
+    }
+
+
+
+
 }
 
