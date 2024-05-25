@@ -94,12 +94,20 @@ public class VideoPlayerScript : MonoBehaviour
         vp.gameObject.SetActive(false);
         skipButton.SetActive(false);
         transition.SetTrigger("Transition");
-        if(SceneManager.GetActiveScene().buildIndex == 5)
+        int scene = SceneManager.GetActiveScene().buildIndex;
+        switch (scene)
         {
-            questContainer.transform.GetChild(0).GetComponent<Quest4>().EndReached();
+            case 5:
+                questContainer.transform.GetChild(0).GetComponent<Quest4>().EndReached();
+                break;
+            case 6:
+                questContainer.transform.GetChild(0).GetComponent<Room4>().EndReached();
+                break;
+            default:
+                if (questContainer.transform.childCount >= 1)
+                    this.transform.GetChild(0).GetComponent<QuestController>().Play(1);
+                break;
         }
-        else if (questContainer.transform.childCount >= 1)
-            this.transform.GetChild(0).GetComponent<QuestController>().Play(1);
 
     }
     //spolar fram framecount så att EndReached påkallas av playVideo
