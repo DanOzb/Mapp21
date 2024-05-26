@@ -11,7 +11,7 @@ public class Room4 : MonoBehaviour
     [SerializeField] GameObject canvas;
     public string ending = "";
 
-    public void SetVideo(string AToC)
+    public void SetVideo(string AToC) 
     {
         ending = AToC;
         
