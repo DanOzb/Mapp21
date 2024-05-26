@@ -8,7 +8,7 @@ public class QuestOne : MonoBehaviour
 {
     [SerializeField] private Transform gameTransform;
     [SerializeField] private Transform piecePrefab;
-    [SerializeField] private GameObject videoController;
+    [SerializeField] private GameObject videoController, timer;
     [SerializeField] private GameObject gameOverScreen;
 
     private List<Transform> pieces;
@@ -70,7 +70,12 @@ public class QuestOne : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-                
+        if(timer.GetComponent<TextMeshProUGUI>().text == "0")
+        {
+            gameOverScreen.SetActive(true);
+            gameObject.transform.parent.gameObject.SetActive(false);
+        }
+
         // Check for completion.
         if (!shuffling && CheckCompletion())
         {

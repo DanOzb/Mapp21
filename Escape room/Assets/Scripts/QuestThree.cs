@@ -33,7 +33,7 @@ public class QuestThree : MonoBehaviour
     {
         tilt = Input.acceleration.x * moveSpeed;
         transform.position = new Vector2(Mathf.Clamp(transform.position.x, -7.5f, 7.5f), transform.position.y);
-        if(timer.GetComponent<TextMeshPro>().text == "0")
+        if(timer.GetComponent<TextMeshProUGUI>().text == "0")
         {
             GameWon();
         }

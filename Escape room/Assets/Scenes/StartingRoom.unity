@@ -1548,6 +1548,11 @@ Transform:
   - {fileID: 145498597}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1512184989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9127829207135391930, guid: d0044003553b5cc48817f644b7b98bb4, type: 3}
+  m_PrefabInstance: {fileID: 1685407008}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1551380013
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,6 +2040,7 @@ MonoBehaviour:
   gameTransform: {fileID: 215531184}
   piecePrefab: {fileID: 1484987268167747786, guid: c1a089be1427cce4982fce69488eb4b9, type: 3}
   videoController: {fileID: 1338532355}
+  timer: {fileID: 1512184989}
   gameOverScreen: {fileID: 286825571}
 --- !u!4 &1754090835
 Transform:

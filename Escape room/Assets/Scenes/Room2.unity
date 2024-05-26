@@ -224,6 +224,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6343030571137169490, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
   m_PrefabInstance: {fileID: 136480224}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &156737788 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9127829207135391930, guid: d0044003553b5cc48817f644b7b98bb4, type: 3}
+  m_PrefabInstance: {fileID: 1413010561}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &167936117
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,7 +631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverScreen: {fileID: 973403020}
-  timer: {fileID: 1224780133}
+  timer: {fileID: 156737788}
 --- !u!50 &1044946205
 Rigidbody2D:
   serializedVersion: 4
@@ -1056,11 +1061,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &1224780133 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7109869282426779933, guid: d0044003553b5cc48817f644b7b98bb4, type: 3}
-  m_PrefabInstance: {fileID: 1413010561}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1303171383
 PrefabInstance:
   m_ObjectHideFlags: 0
