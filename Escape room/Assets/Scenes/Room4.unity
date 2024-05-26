@@ -857,8 +857,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Your initiation has been completed, you have been chosen as the kidnappers
-    personal slave. \nAwait further instructions"
+  m_text: You did not survive the bomb explosion.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1299,7 +1298,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 699653902}
+    m_TransformParent: {fileID: 1857738737}
     m_Modifications:
     - target: {fileID: 1722816022477935513, guid: e14aa9e309ff5cc41b6f789b13411345, type: 3}
       propertyPath: m_Name
@@ -1327,15 +1326,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3898826754349881813, guid: e14aa9e309ff5cc41b6f789b13411345, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3898826754349881813, guid: e14aa9e309ff5cc41b6f789b13411345, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3898826754349881813, guid: e14aa9e309ff5cc41b6f789b13411345, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3898826754349881813, guid: e14aa9e309ff5cc41b6f789b13411345, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1627,7 +1626,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 129389728}
-  - {fileID: 573684514}
+  - {fileID: 1638988802}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &773891876
@@ -2414,7 +2413,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "You did not survive \nthe bomb explosion"
+  m_text: 'Your initiation has been completed. You have been chosen as capturers
+    personal slave. Await further instructions. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2682,6 +2682,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 6044042205398416825, guid: 4749527e0229dbc4eb27f9ac00695294, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044042205398416825, guid: 4749527e0229dbc4eb27f9ac00695294, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044042205398416825, guid: 4749527e0229dbc4eb27f9ac00695294, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2698,7 +2710,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1857738737}
+    m_TransformParent: {fileID: 699653902}
     m_Modifications:
     - target: {fileID: 1722816022477935513, guid: e14aa9e309ff5cc41b6f789b13411345, type: 3}
       propertyPath: m_Name
@@ -2783,6 +2795,10 @@ PrefabInstance:
     - target: {fileID: 6905561929877377452, guid: e14aa9e309ff5cc41b6f789b13411345, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7460832427308047907, guid: e14aa9e309ff5cc41b6f789b13411345, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8153770984475912375, guid: e14aa9e309ff5cc41b6f789b13411345, type: 3}
       propertyPath: m_Pivot.y
@@ -3101,7 +3117,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1638988802}
+  - {fileID: 573684514}
   - {fileID: 930743337}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
