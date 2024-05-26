@@ -592,7 +592,7 @@ PrefabInstance:
     - target: {fileID: 8010199463447016914, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_VideoClip
       value: 
-      objectReference: {fileID: 32900000, guid: 27a4c92763fdfbf41b310c95480fbecb, type: 3}
+      objectReference: {fileID: 32900000, guid: 7c549044be0118e48a0e9ea2cea5239b, type: 3}
     - target: {fileID: 8010199463447016914, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
@@ -637,11 +637,6 @@ PrefabInstance:
 --- !u!4 &129389728 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6343030571137169490, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
-  m_PrefabInstance: {fileID: 129389727}
-  m_PrefabAsset: {fileID: 0}
---- !u!328 &129389729 stripped
-VideoPlayer:
-  m_CorrespondingSourceObject: {fileID: 8010199463447016914, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
   m_PrefabInstance: {fileID: 129389727}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &150911616 stripped
@@ -1850,14 +1845,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1a084f396cd5849a2a1756a63fd7bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endingA: {fileID: 129389729}
-  endingB: {fileID: 859586674}
-  endingC: {fileID: 930743338}
   endingAScreen: {fileID: 573684516}
   endingBScreen: {fileID: 78214511}
   endingCScreen: {fileID: 1638988804}
   videoController: {fileID: 569820953}
   canvas: {fileID: 112221248}
+  ending: 
 --- !u!4 &844441524
 Transform:
   m_ObjectHideFlags: 0
@@ -1932,7 +1925,7 @@ PrefabInstance:
     - target: {fileID: 8010199463447016914, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_VideoClip
       value: 
-      objectReference: {fileID: 32900000, guid: 7c549044be0118e48a0e9ea2cea5239b, type: 3}
+      objectReference: {fileID: 32900000, guid: e3c07a3c391715b449d929fcff42b047, type: 3}
     - target: {fileID: 8010199463447016914, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
       propertyPath: m_TargetCamera
       value: 
@@ -1973,11 +1966,6 @@ PrefabInstance:
 --- !u!4 &859586673 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6343030571137169490, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
-  m_PrefabInstance: {fileID: 859586672}
-  m_PrefabAsset: {fileID: 0}
---- !u!328 &859586674 stripped
-VideoPlayer:
-  m_CorrespondingSourceObject: {fileID: 8010199463447016914, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
   m_PrefabInstance: {fileID: 859586672}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &864399557
@@ -2213,11 +2201,6 @@ PrefabInstance:
 --- !u!4 &930743337 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6343030571137169490, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
-  m_PrefabInstance: {fileID: 930743336}
-  m_PrefabAsset: {fileID: 0}
---- !u!328 &930743338 stripped
-VideoPlayer:
-  m_CorrespondingSourceObject: {fileID: 8010199463447016914, guid: 9437c3ddf6a12764989a62cb08e8c202, type: 3}
   m_PrefabInstance: {fileID: 930743336}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1071566026
