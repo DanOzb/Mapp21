@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,29 +10,31 @@ public class RoomController : MonoBehaviour
     private int roomNumber;
     public static int roomNumbers;
     private static int questNumbers;
-    private List<int> roomList;
+    private List<int> leftQuestsList;
     [SerializeField] GameObject[] buttons;
 
     private void Start()
     {
-        roomList = new List<int>();
+        leftQuestsList = new List<int>();
         buttons = GameObject.FindGameObjectsWithTag("Button");
+
         Char[] arr = roomNumbers.ToString().ToCharArray();
-        List<char> questArr = new List<char>();
-        questArr.AddRange(questNumbers.ToString().ToCharArray());
+
+        List<char> questNumbers = new List<char>();
+
         int temp = 0;
 
-        for(int i = 0; i < 4; i++)
+
+        for(int i = 1; i < 4; i++)
         {
-            if (!questArr.Contains(((char)i)))
+            if (!questNumbers.Contains((char)i))
             {
-                roomList.Add(i);
+                leftQuestsList.Add(i);
             }
         }
 
         foreach(char c in arr)
         {
-            Debug.Log(c);
             int number = Int32.Parse(c.ToString());
             number--;
             if (number >= 0)
@@ -41,18 +44,19 @@ public class RoomController : MonoBehaviour
             }
         }
         if (temp == 4)
-            SceneManager.LoadScene(0);
+            EnterRoom();
 
     }
 
     public void EnterRoom()
     {
-        if (roomList.Count == 0)
+        if (leftQuestsList.Count == 0)
             SceneManager.LoadScene(6); //rum 4
-        roomNumber = roomList[UnityEngine.Random.Range(1, roomList.Count)] + 2; //rum 1-3
-        TransitionScript.sceneToLoad = roomNumber;
+        roomNumber = leftQuestsList[UnityEngine.Random.Range(1, leftQuestsList.Count)];//rum 1-3
+        questNumbers = Int32.Parse(questNumbers.ToString() + roomNumber);
+        TransitionScript.sceneToLoad = roomNumber + 2;
         TransitionScript.nextTransition = true;
-        Debug.Log(roomList.Count);
+        Debug.Log(leftQuestsList.Count);
     }
 
     public void GoBackToMenu()
