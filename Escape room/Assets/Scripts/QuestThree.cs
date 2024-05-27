@@ -22,7 +22,6 @@ public class QuestThree : MonoBehaviour
     public void GameWon()
     {
         won = true;
-        questContainer.SetActive(false);
         //gör något
         TransitionScript.sceneToLoad = 2;
         TransitionScript.nextTransition = true;
