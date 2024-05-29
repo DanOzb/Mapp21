@@ -26,7 +26,7 @@ public class VideoPlayerScript : MonoBehaviour
         allAudioSources = new List<AudioSource>(FindObjectsOfType<AudioSource>());
         PlayVideo();
     }
-
+    
     private void Update()
     {
         if(PauseMenu._pause && !pauseMenu.activeSelf)
@@ -35,7 +35,7 @@ public class VideoPlayerScript : MonoBehaviour
             resumeGame();
 
     }
-
+    
 
 
     //spelar videos
@@ -151,22 +151,22 @@ public class VideoPlayerScript : MonoBehaviour
 
     public void pauseGame()
     {
-        if(videoPlayer != null)
+        pauseMenu.SetActive(true);
+        if (videoPlayer != null)
             videoPlayer.Pause();
         else if(questVideo != null)
             questVideo.Pause();
         
-        pauseMenu.SetActive(true);
         PauseAllAudio();
     }
 
     public void resumeGame()
     {
+        pauseMenu.SetActive(false);
         if(videoPlayer != null)
             videoPlayer.Play();
         else 
             questVideo.Play();
-        pauseMenu.SetActive(false);
         ResumeAllAudio();
     }
 
